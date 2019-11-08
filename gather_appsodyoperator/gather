@@ -1,0 +1,8 @@
+#!/bin/bash
+
+LOGS_DIR="/must-gather"
+
+/usr/bin/gather_appsody
+/usr/bin/gather_knative
+
+exit 0
