@@ -1,5 +1,13 @@
 #!/bin/bash
 
-echo "hi"
+# LOGS_DIR="/must-gather"
+
+# /usr/bin/gather_appsody
+# /usr/bin/gather_istio
+# /usr/bin/gather_kabanero
+# /usr/bin/gather_knative
+# /usr/bin/gather_tekton
+# /usr/bin/gather_che
+# /usr/bin/gather_kappnav
 
 exit 0

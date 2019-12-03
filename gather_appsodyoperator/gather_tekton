@@ -4,7 +4,7 @@
 
 set -Euox pipefail
 
-COMPONENT="knative.dev"
+COMPONENT="tekton.dev"
 BIN=oc
 LOGS_DIR="/must-gather"
 
@@ -26,7 +26,7 @@ done
 
 # Collect pod logs, describe & get additional resources
 
-NAMESPACES=(knative-eventing knative-serving knative-sources)
+NAMESPACES=(openshift-pipelines)
 APIRESOURCES=(configmaps pods routes roles rolebindings serviceaccounts services)
 
 for NAMESPACE in ${NAMESPACES[@]}
@@ -49,7 +49,7 @@ done
 
 # Collect clusterroles and clusterrolebindings
 
-KEY="knative"
+KEY="tekton"
 NAMESPACE="kube-system"
 
 APIRESOURCE="clusterroles"

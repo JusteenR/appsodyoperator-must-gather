@@ -4,7 +4,7 @@
 
 set -Euox pipefail
 
-COMPONENT="knative.dev"
+COMPONENT="istio.io"
 BIN=oc
 LOGS_DIR="/must-gather"
 
@@ -26,7 +26,7 @@ done
 
 # Collect pod logs, describe & get additional resources
 
-NAMESPACES=(knative-eventing knative-serving knative-sources)
+NAMESPACES=(istio-system)
 APIRESOURCES=(configmaps pods routes roles rolebindings serviceaccounts services)
 
 for NAMESPACE in ${NAMESPACES[@]}
@@ -49,7 +49,7 @@ done
 
 # Collect clusterroles and clusterrolebindings
 
-KEY="knative"
+KEY="istio"
 NAMESPACE="kube-system"
 
 APIRESOURCE="clusterroles"
