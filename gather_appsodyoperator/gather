@@ -4,5 +4,6 @@ LOGS_DIR="/must-gather"
 
 /usr/bin/gather_appsody
 /usr/bin/gather_knative
+/usr/bin/gather_pods
 
 exit 0
