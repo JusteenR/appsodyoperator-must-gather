@@ -5,7 +5,7 @@
 set -Euox pipefail
 
 BIN=oc
-LOGS_DIR="/must-gather"
+LOGS_DIR="./must-gather"
 
 # Get and describe all pods that are not Ready
 
