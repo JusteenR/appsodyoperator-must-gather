@@ -15,9 +15,9 @@ resources=($resources)
 
 for i in ${!names[@]}
 do
-    mkdir -p ${LOGS_DIR}/${namespaces[i]}/${SUB_DIR}/${resources[i]}
-    ${BIN} get ${resources[i]} ${names[i]} -n ${namespaces[i]} -o=yaml > ${LOGS_DIR}/${namespaces[i]}/${SUB_DIR}/${resources[i]}/get.yaml
-    ${BIN} describe ${resources[i]} ${names[i]} -n ${namespaces[i]} > ${LOGS_DIR}/${namespaces[i]}/${SUB_DIR}/${resources[i]}/describe.log
+	mkdir -p ${LOGS_DIR}/${namespaces[i]}/${SUB_DIR}/${resources[i]}
+	${BIN} get ${resources[i]} ${names[i]} -n ${namespaces[i]} -o=yaml > ${LOGS_DIR}/${namespaces[i]}/${SUB_DIR}/${resources[i]}/get.yaml
+	${BIN} describe ${resources[i]} ${names[i]} -n ${namespaces[i]} > ${LOGS_DIR}/${namespaces[i]}/${SUB_DIR}/${resources[i]}/describe.log
 done 
 
 /usr/bin/gather_pods

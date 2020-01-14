@@ -19,7 +19,7 @@ NAMESPACES=($NAMESPACES)
 # Describe and get all pods that are not ready
 for POD in ${!PODS[@]}
 do
-    mkdir -p ${LOGS_DIR}/${NAMESPACES[$POD]}/${SUB_DIR}/${PODS[$POD]}
-    ${BIN} describe pod ${PODS[$POD]} -n ${NAMESPACES[$POD]} > ${LOGS_DIR}/${NAMESPACES[$POD]}/${SUB_DIR}/${PODS[$POD]}/describe.log
-    ${BIN} get pod ${PODS[$POD]} -n ${NAMESPACES[$POD]} -o=yaml > ${LOGS_DIR}/${NAMESPACES[$POD]}/${SUB_DIR}/${PODS[$POD]}/get.yaml
+	mkdir -p ${LOGS_DIR}/${NAMESPACES[$POD]}/${SUB_DIR}/${PODS[$POD]}
+	${BIN} describe pod ${PODS[$POD]} -n ${NAMESPACES[$POD]} > ${LOGS_DIR}/${NAMESPACES[$POD]}/${SUB_DIR}/${PODS[$POD]}/describe.log
+	${BIN} get pod ${PODS[$POD]} -n ${NAMESPACES[$POD]} -o=yaml > ${LOGS_DIR}/${NAMESPACES[$POD]}/${SUB_DIR}/${PODS[$POD]}/get.yaml
 done
