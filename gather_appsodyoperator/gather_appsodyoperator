@@ -22,5 +22,5 @@ do
     ${BIN} get pod ${PODS[$POD]} -n ${NAMESPACES[$POD]} -o=yaml > ${LOGS_DIR}/${NAMESPACES[$POD]}/${SUB_DIR}/${PODS[$POD]}/get.yaml
     ${BIN} describe pod ${PODS[$POD]} -n ${NAMESPACES[$POD]} > ${LOGS_DIR}/${NAMESPACES[$POD]}/${SUB_DIR}/${PODS[$POD]}/describe.log
     LOGS=$(${BIN} logs ${PODS[${POD}]} -n ${NAMESPACES[$POD]} 2>&1)
-    echo ${LOGS} > ${LOGS_DIR}/${NAMESPACES[$POD]}/${SUB_DIR}/${PODS[$POD]}/logs.log
+    echo ${LOGS} > ${LOGS_DIR}/${NAMESPACES[$POD]}/${SUB_DIR}/${PODS[$POD]}/operatorlogs.log
 done
