@@ -9,11 +9,8 @@ LOGS_DIR="/must-gather"
 SUB_DIR="appsodyoperatorpods"
 
 # Get the pod name(s) and namespace(s) that the appsody-operator(s) are running in, across all namespaces
-PODS=$(${BIN} get pods --all-namespaces -o jsonpath="{.items[?(@.metadata.labels.name=='appsody-operator')].metadata.name}")
-NAMESPACES=$(${BIN} get pods --all-namespaces -o jsonpath="{.items[?(@.metadata.labels.name=='appsody-operator')].metadata.namespace}")
-
-PODS=($PODS)
-NAMESPACES=($NAMESPACES)
+PODS=$(${BIN} get pods --all-namespaces -o jsonpath="{.items[?(@.metadata.labels.name=='appsody-operator')].metadata.name}" | tr ' ' '\n')
+NAMESPACES=$(${BIN} get pods --all-namespaces -o jsonpath="{.items[?(@.metadata.labels.name=='appsody-operator')].metadata.namespace}" | tr ' ' '\n')
 
 # Get, describe, and log the pods of the operator(s)
 for POD in ${!PODS[@]}
